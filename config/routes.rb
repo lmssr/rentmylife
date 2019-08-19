@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources:lifestyles do
+    resources:bookings, only: [:create, :new]
+  end
+  resources:bookings, except: [:create, :new]
 end
+
+
+# (pas besoin de coder les fonctions Edit, update, Delete de lifestyle)
