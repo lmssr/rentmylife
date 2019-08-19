@@ -1,0 +1,2 @@
+class Lifestyle < ApplicationRecord
+end
