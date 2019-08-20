@@ -3,7 +3,6 @@ class LifestylesController < ApplicationController
   def new
     @lifestyle = Lifestyle.new
     authorize @lifestyle
-
   end
 
   def create

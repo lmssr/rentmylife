@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3">
-      <h1>Rent Request</h1>
+      <h4>How many time do you want to be a <%= @lifestyle.name %></h4>
       <%= simple_form_for [@booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date%>
