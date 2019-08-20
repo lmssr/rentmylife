@@ -1,6 +1,6 @@
 
-<img class="avatar-large" alt="avatar-large" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R"/>
-<h2>Hello, Johnny Librarian</h2>
+<%= cl_image_tag(@user.photo, width: 300, height: 300, crop: :fill, :class => "useravatar") %>
+<h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2>
 <p>Joined in 2019</p>
 
 <ul class="list-inline tabs-underlined">
