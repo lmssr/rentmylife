@@ -1,0 +1,8 @@
+<h1>THE bookings are</h1>
+<div class="card">
+     <h3>Hoster:<%=  @booking.user.email%></h3>
+     <h3> Lifestyle :<%=  @booking.lifestyle.name%></h3>
+    <h4> From :<%= @booking.start_date %></h4>
+   <h4> To: <%= @booking.end_date %></h4>
+   <h4> for : <%= @booking.lifestyle.price %> $ </h4>
+  </div>
