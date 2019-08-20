@@ -1,0 +1,5 @@
+<h1>List of lifestyles:</h1>
+
+<% @lifestyles.each do |lifestyle| %>
+  <%= link_to lifestyle.name, lifestyle_path(lifestyle) %>
+<% end %>

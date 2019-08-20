@@ -13,6 +13,10 @@ class LifestylesController < ApplicationController
     @lifestyle = Lifestyle.find(params[:id])
   end
 
+  def index
+    @lifestyles = Lifestyle.all
+  end
+
 
   private
 
