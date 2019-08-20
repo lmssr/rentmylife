@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3">
-      <h1>Review Booking:</h1>
-      <div class="card">
-        <h3>Hoster:<%=  @booking.user.email%></h3>
-        <h3> Lifestyle :<%=  @booking.lifestyle.name%></h3>
-        <h4> From :<%= @booking.start_date %></h4>
-        <h4> To: <%= @booking.end_date %></h4>
-        <h4> for : <%= @booking.lifestyle.price %> $ </h4>
+      <h2>Review Booking:</h2>
+      <div class="card" style="align-items: center;">
+        <h4><%=  @booking.user.email.split('@').first%>, You will be </h4>
+        <h4> <%=  @booking.lifestyle.name%></h4>
+        <h4> From <%= @booking.start_date %></h4>
+        <h4> To <%= @booking.end_date %></h4>
+        <h4> for <%= @booking.lifestyle.price %> $ </h4>
+        <h4>so enjoy it!</h4>
       </div>
     </div>
   </div>
+  <%= link_to "Back_to_Profile", dashboard_path(@booking.lifestyle) %>
 </div>
+

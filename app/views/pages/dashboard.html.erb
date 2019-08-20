@@ -1,6 +1,18 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<%= cl_image_tag(@user.photo, width: 300, height: 300, crop: :fill, :class => "useravatar") %>
+<h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2>
+<p>Joined in 2019</p>
 
-<p> Who need a description ? </p>
-
-
-<%= @user.photo_cache %>
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">User Info</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Your Bookings</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Your Reviews</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Payment Methods</a>
+  </li>
+</ul>
