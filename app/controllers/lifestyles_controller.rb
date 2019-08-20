@@ -1,12 +1,8 @@
 class LifestylesController < ApplicationController
-<<<<<<< HEAD
+
 
   skip_before_action :authenticate_user!, only: [:index]
 
-
-
-=======
->>>>>>> 4092462114e70d7956459ede8608d05eb3d211e5
   def new
     @lifestyle = Lifestyle.new
     authorize @lifestyle
