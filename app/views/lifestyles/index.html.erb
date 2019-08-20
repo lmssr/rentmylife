@@ -14,4 +14,7 @@
 <% end %>
   <br>
 
-<%= link_to "Add a new lifestyle", new_lifestyle_path %>
+
+<% if policy(Lifestyle).create? %>
+  <%= link_to "Add a new lifestyle", new_lifestyle_path %>
+<% end %>
