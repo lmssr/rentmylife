@@ -7,6 +7,7 @@ class LifestylesController < ApplicationController
   def create
     @lifestyle = Lifestyle.new(lifestyle_params)
     @lifestyle.save
+    redirect_to lifestyles_path
   end
 
   def show
