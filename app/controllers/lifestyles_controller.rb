@@ -1,5 +1,4 @@
 class LifestylesController < ApplicationController
-
   def new
     @lifestyle = Lifestyle.new
   end
@@ -31,4 +30,3 @@ class LifestylesController < ApplicationController
     params.require(:lifestyle).permit(:name, :description, :price)
   end
 end
-
