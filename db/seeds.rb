@@ -8,5 +8,6 @@
 Lifestyle.create(name: "Plumber", description: "Be Mario for a few days", price: 4)
 Lifestyle.create(name: "Dwayne Johnson", description: "Who need a description ?", price: 1000)
 Lifestyle.create(name: "Fred", description: "Play golf all day long", price: 10)
+Lifestyle.create(name: "Dog", description: "De a dog", price: 25)
 
 puts "done"
