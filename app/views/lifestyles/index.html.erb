@@ -1,7 +1,7 @@
 <h1>List of lifestyles:</h1>
 
 <% @lifestyles.each do |lifestyle| %>
-  <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> -
+  <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> - <%= "$#{lifestyle.price}" %>
   <%= link_to "Delete", lifestyle_path(lifestyle),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
