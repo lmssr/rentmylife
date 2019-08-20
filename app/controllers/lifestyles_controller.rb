@@ -1,25 +1,36 @@
 class LifestylesController < ApplicationController
   def new
     @lifestyle = Lifestyle.new
+    authorize @lifestyle
+
   end
 
   def create
     @lifestyle = Lifestyle.new(lifestyle_params)
+    @lifestyle.user = current_user
+    authorize @lifestyle
+
     @lifestyle.save
+
     redirect_to lifestyles_path
   end
 
   def show
     @lifestyle = Lifestyle.find(params[:id])
+    authorize @lifestyle
   end
 
   def index
-    @lifestyles = Lifestyle.all
+    @lifestyles = policy_scope(Lifestyle)
   end
 
   def destroy
+
     @lifestyle = Lifestyle.find(params[:id])
+    authorize @lifestyle
+
     @lifestyle.destroy
+
 
     redirect_to lifestyles_path
   end
