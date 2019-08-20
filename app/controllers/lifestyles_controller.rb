@@ -17,11 +17,10 @@ class LifestylesController < ApplicationController
     @lifestyles = Lifestyle.all
   end
 
-
   private
 
   def lifestyle_params
-    params.require(:lifestyle).permit(:name, :description)
+    params.require(:lifestyle).permit(:name, :description, :price)
   end
 end
 
