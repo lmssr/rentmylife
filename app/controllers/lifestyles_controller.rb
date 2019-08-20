@@ -1,5 +1,8 @@
 class LifestylesController < ApplicationController
 
+
+  skip_before_action :authenticate_user!, only: [:index]
+
   def new
     @lifestyle = Lifestyle.new
     authorize @lifestyle
@@ -42,4 +45,3 @@ class LifestylesController < ApplicationController
     params.require(:lifestyle).permit(:name, :description, :price)
   end
 end
-

@@ -2,9 +2,14 @@
 
 <% @lifestyles.each do |lifestyle| %>
   <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> - <%= "$#{lifestyle.price}" %> -
-  <%= link_to "Delete", lifestyle_path(lifestyle),
+  <% if current_user %>
+    <%= link_to "Delete", lifestyle_path(lifestyle),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+  <% else %>
+    <%= link_to "Delete", lifestyle_path(lifestyle),
+      method: :delete %>
+  <% end %>
   <br>
 <% end %>
   <br>
