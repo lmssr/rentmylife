@@ -17,6 +17,12 @@ class LifestylesController < ApplicationController
     @lifestyles = Lifestyle.all
   end
 
+  def destroy
+    @lifestyle = Lifestyle.find(params[:id])
+    @lifestyle.destroy
+
+    redirect_to lifestyles_path
+  end
 
   private
 
