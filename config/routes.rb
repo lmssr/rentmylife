@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
   resources:lifestyles do
-    resources:bookings, only: [:create, :new]
+    resources:bookings, only: [:new]
   end
-  resources:bookings, except: [:create, :new]
+  resources:bookings, except: [ :new]
 end
 
 
