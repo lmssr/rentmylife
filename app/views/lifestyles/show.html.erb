@@ -1,6 +1,7 @@
 <h1><%= @lifestyle.name %></h1>
 
 <%= @lifestyle.description %>
-<%= @lifestyle.price %>
+<br>
+<%= "Price: $#{@lifestyle.price}" %>
 
 <%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle) %>
