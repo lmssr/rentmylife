@@ -1,10 +1,12 @@
 <h1>List of lifestyles:</h1>
 
 <% @lifestyles.each do |lifestyle| %>
-  <%= link_to lifestyle.name, lifestyle_path(lifestyle) %>
+  <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> -
   <%= link_to "Delete", lifestyle_path(lifestyle),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+  <br>
 <% end %>
+  <br>
 
 <%= link_to "Add a new lifestyle", new_lifestyle_path %>
