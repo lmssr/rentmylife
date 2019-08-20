@@ -2,13 +2,13 @@ class BookingsController < ApplicationController
   def new
     # render the view page
     @booking = Booking.new
-    authorize @lifestyle
+    authorize @booking
     @lifestyle = Lifestyle.find(params[:lifestyle_id])
   end
 
   def create
     @booking = Booking.new(bookings_params)
-    authorize @lifestyle
+    authorize @booking
     @booking.user = current_user
     if @booking.save
       redirect_to booking_path(@booking)
@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    authorize @lifestyle
+    authorize @booking
   end
   private
   def bookings_params
