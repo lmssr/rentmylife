@@ -21,7 +21,13 @@ class LifestylesController < ApplicationController
   end
 
   def index
-    @lifestyles = policy_scope(Lifestyle)
+    @lifestyles = policy_scope(Lifestyle).geocoded
+    @markers = @lifestyles.map do |lifestyle|
+      {
+        lat: lifestyle.latitude,
+        lng: lifestyle.longitude
+      }
+    end
   end
 
   def destroy
