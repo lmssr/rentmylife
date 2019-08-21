@@ -28,6 +28,7 @@ class LifestylePolicy < ApplicationPolicy
   private
 
   def user_is_owner?
+    puts record
     return user == record.user
   end
 end
