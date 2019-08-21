@@ -4,12 +4,12 @@
     <div class="card-trip-infos">
       <div>
         <h1><%= @lifestyle.name %></h1>
-        <%= @lifestyle.description %>
+        <span class="decrpt"><%= @lifestyle.description %></span>
       </div>
         <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}" %></h2>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
+  <%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
+  <%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
 </div>
-<%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
-<%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
 
