@@ -8,9 +8,6 @@
         <%= link_to lifestyle.name, lifestyle_path(lifestyle), class: "btn btn-primary" %>
         <span class="price_tag"><%= "$#{lifestyle.price}" %></span>
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.chicagotribune.com/resizer/2la6Dr_2VZrmEtATWDKJ8Yn0ZLA=/800x533/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/6QKTCV3XKFELDAIG7OSDD4DZYE.jpg')">
-        <%= link_to lifestyle.name, lifestyle_path(lifestyle), class: "btn btn-outline-primary" %> <%= "$#{lifestyle.price}" %>
-
       <div class="delete btn">
         <% if policy(lifestyle).destroy? %>
           <%= link_to "Delete", lifestyle_path(lifestyle),
@@ -18,17 +15,13 @@
               data: { confirm: "Are you sure?" } %>
         <% end %>
       </div>
-      </div>
+    </div>
       <br>
     <% end %>
     <br>
   </div>
-
-
-  <div class="map">
-
-
 </div>
+
   <div
   id="map"
   style="width: 100%;
@@ -36,9 +29,7 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-
-
   </div>
 
-</div>
+
 
