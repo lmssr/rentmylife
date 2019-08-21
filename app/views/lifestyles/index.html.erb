@@ -4,7 +4,7 @@
 
 
   <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> - <%= "$#{lifestyle.price}" %> -
-  <% if policy(lifestyle).destroy? %>
+  <% if current_user && policy(lifestyle).destroy? %>
     <%= link_to "Delete", lifestyle_path(lifestyle),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
