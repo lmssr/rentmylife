@@ -18,6 +18,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
+  display: inline;
 }
 
 // Smallest device
@@ -54,4 +55,12 @@
 .btn-primary {
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+.map {
+  border: 5px solid black;
+  display: flex;
+}
+.container {
+  display: flex;
 }
