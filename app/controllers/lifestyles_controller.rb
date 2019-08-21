@@ -25,7 +25,8 @@ class LifestylesController < ApplicationController
     @markers = @lifestyles.geocoded.map do |lifestyle|
       {
         lat: lifestyle.latitude,
-        lng: lifestyle.longitude
+        lng: lifestyle.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { lifestyle: lifestyle })
       }
     end
   end
