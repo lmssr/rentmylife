@@ -3,21 +3,22 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 200px 0;
+  padding: 355px 0;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 48px;
+  text-shadow: 1px 3px 2px rgba(0,0,0,0.5);
+  font-size: 52px;
   font-weight: bold;
   font-family: "Lobster";
+  letter-spacing: 3px;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 25px;
   color: white;
   opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 3px 2px rgba(0,0,0,0.5);
 }
