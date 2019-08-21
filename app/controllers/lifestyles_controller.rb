@@ -25,19 +25,17 @@ class LifestylesController < ApplicationController
     @markers = @lifestyles.geocoded.map do |lifestyle|
       {
         lat: lifestyle.latitude,
-        lng: lifestyle.longitude
+        lng: lifestyle.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { lifestyle: lifestyle })
       }
     end
   end
 
   def destroy
-
     @lifestyle = Lifestyle.find(params[:id])
     authorize @lifestyle
 
     @lifestyle.destroy
-
-
     redirect_to lifestyles_path
   end
 
