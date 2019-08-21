@@ -31,13 +31,10 @@ class LifestylesController < ApplicationController
   end
 
   def destroy
-
     @lifestyle = Lifestyle.find(params[:id])
     authorize @lifestyle
 
     @lifestyle.destroy
-
-
     redirect_to lifestyles_path
   end
 
