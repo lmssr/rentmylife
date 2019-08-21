@@ -3,10 +3,11 @@
   <div class="card-trip-infos">
     <div>
       <h1><%= @lifestyle.name %></h1>
+      Owned by : <%= User.find(@lifestyle.user_id).first_name%>
       <%= @lifestyle.description %>
     </div>
     <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}" %></h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
-<button type="button" class="btn btn-primary"><%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle) %></button>
+<button type="button" class="btn btn-primary"><%=link_to "Rent now" , new_lifestyle_booking_path(@lifestyle)%></button>

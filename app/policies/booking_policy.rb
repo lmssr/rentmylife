@@ -18,7 +18,7 @@ class BookingPolicy < ApplicationPolicy
     # `record` the restaurant in question
     # (@restaurant)
 
-    user_is_owner?
+    return user == record.lifestyle.user
   end
 
   def destroy?

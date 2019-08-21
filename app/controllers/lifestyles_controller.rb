@@ -7,12 +7,16 @@ class LifestylesController < ApplicationController
 
   def create
     @lifestyle = Lifestyle.new(lifestyle_params)
-    @lifestyle.user = current_user
     authorize @lifestyle
+    current_user.lifestyle = @lifestyle
+    @lifestyle.user = current_user
 
-    @lifestyle.save
-
-    redirect_to lifestyles_path
+   if  @lifestyle.save!
+      current_user.save
+      redirect_to lifestyles_path
+    else
+      render :new
+    end
   end
 
   def show
