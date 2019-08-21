@@ -1,12 +1,15 @@
+
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h1><%= @lifestyle.name %></h1>
-      <%= @lifestyle.description %>
+  <img src="https://www.chicagotribune.com/resizer/2la6Dr_2VZrmEtATWDKJ8Yn0ZLA=/800x533/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/6QKTCV3XKFELDAIG7OSDD4DZYE.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h1><%= @lifestyle.name %></h1>
+        <%= @lifestyle.description %>
+      </div>
+        <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}" %></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}" %></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
 </div>
-<button type="button" class="btn btn-primary"><%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle) %></button>
+<%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
+<%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
+
