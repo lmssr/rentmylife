@@ -1,14 +1,14 @@
 <h1>List of lifestyles:</h1>
 
 <% @lifestyles.each do |lifestyle| %>
+
+
   <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> - <%= "$#{lifestyle.price}" %> -
-  <% if current_user %>
+  <% if policy(lifestyle).destroy? %>
     <%= link_to "Delete", lifestyle_path(lifestyle),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
-  <% else %>
-    <%= link_to "Delete", lifestyle_path(lifestyle),
-      method: :delete %>
+
   <% end %>
   <br>
 <% end %>
