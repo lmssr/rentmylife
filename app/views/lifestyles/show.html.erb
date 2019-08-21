@@ -1,7 +1,12 @@
-<h1><%= @lifestyle.name %></h1>
-
-<%= @lifestyle.description %>
-<br>
-<%= "Price: $#{@lifestyle.price}" %>
-
-<%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle) %>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h1><%= @lifestyle.name %></h1>
+      <%= @lifestyle.description %>
+    </div>
+    <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}" %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+<button type="button" class="btn btn-primary"><%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle) %></button>
