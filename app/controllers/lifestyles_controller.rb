@@ -28,6 +28,7 @@ class LifestylesController < ApplicationController
         lat: lifestyle.latitude,
         lng: lifestyle.longitude
       }
+    end
   end
 
   def destroy
