@@ -19,13 +19,14 @@
   </div>
 
 
-  <!-- <% if policy(Lifestyle).create? %>
-    <%= link_to "Add New Lifestyle", new_lifestyle_path %>
-  <% end %> -->
-
-  <div class="map">
+</div>
+  <div
+  class="map"
+  style="width: 500px;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
 
   </div>
-
-</div>
 
