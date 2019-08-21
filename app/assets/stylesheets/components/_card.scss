@@ -2,6 +2,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 .card-trip > img {
@@ -13,7 +15,7 @@
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 10px;
 }
 
 .card-trip p {
@@ -35,6 +37,10 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 70px;
+}
+
+.decrpt {
+  line-height: 2;
 }
 
