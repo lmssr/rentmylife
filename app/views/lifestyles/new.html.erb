@@ -6,6 +6,8 @@
       <%= simple_form_for(@lifestyle) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :price %>
         <%= f.input :address %>
         <%= f.submit "Add Lifestyle", class: "btn btn-primary" %>
