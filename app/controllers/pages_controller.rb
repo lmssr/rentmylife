@@ -6,11 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
-    if current_user.lifestyles.length >= 1
-      @bookings = current_user.lifestyles.first.bookings
-    else
-      @bookings = []
-    end
+    @bookings = current_user.bookings
+    @bookings_i_made = Booking.where(user: current_user)
   end
 end
