@@ -17,22 +17,19 @@
      Details : <%=@user.lifestyle.description %>
   </li>
   <% end %>
-    <%if @user.bookings %>
+ <%if @user.bookings %>
       <li>
         <a href="#" class="tab-underlined">Your Bookings</a>
       <ul>
-
         <% @user.bookings.each do |booking| %>
         <li> You booked : <%= booking.lifestyle.name%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, your request is : <%= booking.status %>  </li>
         <% end %>
-
       </ul>
-    </li>
+      </li>
     <% end %>
   <%unless @bookings == []%>
     <li>
     <a href="#" class="tab-underlined active">Your Clients</a>
-
       <ul>
         <% @bookings.each do |booking| %>
         <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>  </li>
@@ -41,9 +38,7 @@
       </ul>
   </li>
    <% end %>
-  <li>
-    <a href="#" class="tab-underlined">Your Reviews</a>
-  </li>
+
   <li>
     <a href="#" class="tab-underlined">Payment Methods</a>
   </li>

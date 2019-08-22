@@ -22,6 +22,9 @@ class LifestylesController < ApplicationController
   def show
     @lifestyle = Lifestyle.find(params[:id])
     authorize @lifestyle
+    if @lifestyle.reviews
+      @reviews = @lifestyle.reviews
+    end
   end
 
   def index
