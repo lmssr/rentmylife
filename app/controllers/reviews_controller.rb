@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     authorize @review
     @review.user = current_user
     if @review.save
-      redirect_to lifestyle_path(current_user.lifestyle)
+      redirect_to lifestyle_path(Lifestyle.find(@review.lifestyle_id))
     else
       render :new
     end
