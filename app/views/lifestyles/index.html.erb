@@ -1,31 +1,36 @@
+<br>
+<h1 class="lifestyle_title">Choose your Lifestyle</h1>
 
-<h1 class="lifestyle_title">Pick a Lifestyle</h1>
 
 
 <div style="display:flex; align-items: center;">
-  <div><%= form_tag lifestyles_path, method: :get do %>
-  <%= text_field_tag :query,
+  <div style="width: 20%; margin: 50px;""><%= form_tag lifestyles_path, method: :get do %>
+    <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a lifestyle"
   %>
+    </div>
+    <div><%= submit_tag "Search", class: "search-button btn btn-primary" %>
+    </div>
+  <% end %>
 
-  </div>
-  <div>  <%= submit_tag "Search", class: "search-button btn btn-primary" %></div>
-<% end %>
+<% results = Lifestyle.search_by_name_and_description(params[:query]) %>
 
+<% results.each do |result|
+end %>
 </div>
-
+<p><%= "There are #{results.size} results." %></p>
 
 
 <div class="box">
   <div class="cards">
-    <% @lifestyles.each do |lifestyle| %>
-      <%= link_to lifestyle_path(lifestyle) do %>
-        <div class="card-category" data-id="<%= lifestyle.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path lifestyle.photo, height: 300, width: 400, crop: :fill %>')">
-          <p><%= lifestyle.name %></p>
+    <% results.each do |result| %>
+      <%= link_to lifestyle_path(result) do %>
+        <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+          <p><%= result.name %></p>
           <br>
-          <span class="price_tag"><%= "$#{lifestyle.price}/day"%></span>
+          <span class="price_tag"><%= "$#{result.price}/day"%></span>
         </div>
       <% end %>
       <br>
