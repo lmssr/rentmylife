@@ -2,10 +2,12 @@
   color: #f2f2f2;
   margin-left: 15px;
 }
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #745DC6;
   color: #f2f2f2;
+  padding: 8px 16px 8px 16px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,6 +16,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
+  width: 48px;
 }
 
+.nav-item {
+  font-size: 20px;
+}
