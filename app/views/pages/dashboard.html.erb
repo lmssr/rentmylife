@@ -17,9 +17,10 @@
      Details : <%=@user.lifestyle.description %>
   </li>
   <% end %>
-  <li>
-    <a href="#" class="tab-underlined">Your Bookings</a>
+
     <%if @user.bookings %>
+    <li>
+    <a href="#" class="tab-underlined">Your Bookings</a>
       <ul>
 
         <% @user.bookings.each do |booking| %>
@@ -27,8 +28,9 @@
         <% end %>
 
       </ul>
+      </li>
     <% end %>
-  </li>
+
   <%if @bookings %>
     <li>
     <a href="#" class="tab-underlined active">Your Clients</a>
@@ -41,9 +43,7 @@
       </ul>
   </li>
    <% end %>
-  <li>
-    <a href="#" class="tab-underlined">Your Reviews</a>
-  </li>
+
   <li>
     <a href="#" class="tab-underlined">Payment Methods</a>
   </li>

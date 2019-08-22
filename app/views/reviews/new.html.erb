@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h1>New Review</h1>
+
+      <%= simple_form_for(@review) do |f| %>
+        <%= f.input :comment %>
+        <%= f.hidden_field :lifestyle_id, value: @lifestyle.id %>
+        <%= f.submit "Add review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
