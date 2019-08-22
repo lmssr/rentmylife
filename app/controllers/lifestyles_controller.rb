@@ -8,7 +8,6 @@ class LifestylesController < ApplicationController
   def create
     @lifestyle = Lifestyle.new(lifestyle_params)
     authorize @lifestyle
-    current_user.lifestyle = @lifestyle
     @lifestyle.user = current_user
 
    if  @lifestyle.save!
