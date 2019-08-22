@@ -13,3 +13,13 @@
   <%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
   <%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
 </div>
+
+ <% if @reviews%>
+ <h1>Reviews :</h1>
+ <ul>
+<% @reviews.each do |review| %>
+  <li><%=review.comment %></li>
+  <% end %>
+</ul>
+<% end %>
+<%= link_to "Leave comment" , new_lifestyle_review_path(@lifestyle)%>
