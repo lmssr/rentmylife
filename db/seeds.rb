@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Lifestyle.destroy_all
-# User.destroy_all
+Booking.destroy_all
+Lifestyle.destroy_all
+User.destroy_all
+
+
 nicolas = User.create(email: "ni.fraisse@gmail.com", password:"123456")
 Lifestyle.create!(name: "Plumber", description: "Be Mario for a few days", price: 4, address: '799  George Street, Peterborough', user: nicolas)
 Lifestyle.create!(name: "Fred", description: "Play golf all day long", price: 10, address: '3 avenue saint laurent, Montreal', user: nicolas)

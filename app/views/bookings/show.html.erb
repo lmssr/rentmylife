@@ -7,8 +7,8 @@
         <h4> <%=  @booking.lifestyle.name%></h4>
         <h4> From <%= @booking.start_date %></h4>
         <h4> To <%= @booking.end_date %></h4>
-        <h4> for <%= @booking.lifestyle.price %> $ </h4>
-        <h4>so enjoy it!</h4>
+        <h4> for <%= @booking.lifestyle.price * (@booking.end_date - @booking.start_date).to_int %> $ </h4>
+        <h4><strong>Wow! Enjoy!</strong></h4>
       </div>
     </div>
   </div>
