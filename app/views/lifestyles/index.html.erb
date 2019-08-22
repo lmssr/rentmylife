@@ -1,5 +1,23 @@
 
 <h1 class="lifestyle_title">Pick a Lifestyle</h1>
+
+
+<div style="display:flex; align-items: center;">
+  <div><%= form_tag lifestyles_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a lifestyle"
+  %>
+
+  </div>
+  <div>  <%= submit_tag "Search", class: "search-button btn btn-primary" %></div>
+<% end %>
+
+</div>
+
+
+
 <div class="box">
   <div class="cards">
     <% @lifestyles.each do |lifestyle| %>
