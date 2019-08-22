@@ -62,8 +62,10 @@ ActiveRecord::Schema.define(version: 2019_08_22_151044) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.bigint "lifestyle_id"
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["lifestyle_id"], name: "index_users_on_lifestyle_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -72,4 +74,5 @@ ActiveRecord::Schema.define(version: 2019_08_22_151044) do
   add_foreign_key "lifestyles", "users"
   add_foreign_key "reviews", "lifestyles"
   add_foreign_key "reviews", "users"
+  add_foreign_key "users", "lifestyles"
 end
