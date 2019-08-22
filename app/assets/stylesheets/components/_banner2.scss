@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600i&display=swap');
+
+.banner2 {
+  background: rgb(211,232,227);
+  background: linear-gradient(90deg, rgba(211,232,227,1) 30%, rgba(116,93,198,1) 70%);
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display:block;
+}
+
+.banner2 p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
