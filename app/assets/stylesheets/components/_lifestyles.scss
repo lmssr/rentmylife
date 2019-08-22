@@ -44,6 +44,9 @@ p {
   .cards {
     grid-template-columns: 1fr;
   }
+  .mapboxgl-canvas {
+    display: none;
+ }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -51,6 +54,7 @@ p {
   .cards {
     grid-template-columns: 1fr;
   }
+
 }
 
 // Medium devices (tablets, 768px and up)
