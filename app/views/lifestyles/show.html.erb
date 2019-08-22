@@ -1,6 +1,6 @@
 
 <div class="card-trip">
-  <!-- <%= image_tag current_user.photo, dashboard_path(@lifestyle.user) %> -->
+  <%= cl_image_tag @lifestyle.photo, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
       <div>
         <h1><%= @lifestyle.name %></h1>
