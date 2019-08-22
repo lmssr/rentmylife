@@ -1,17 +1,37 @@
-<h1>List of lifestyles:</h1>
 
-<% @lifestyles.each do |lifestyle| %>
-  <%= link_to lifestyle.name, lifestyle_path(lifestyle) %> - <%= "$#{lifestyle.price}" %> -
-  <% if current_user %>
-    <% if policy(lifestyle).destroy? %>
-      <%= link_to "Delete", lifestyle_path(lifestyle),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
+<h1 class="lifestyle_title">Pick a Lifestyle</h1>
+<div class="box">
+  <div class="cards">
+    <% @lifestyles.each do |lifestyle| %>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.chicagotribune.com/resizer/2la6Dr_2VZrmEtATWDKJ8Yn0ZLA=/800x533/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/6QKTCV3XKFELDAIG7OSDD4DZYE.jpg)">
+        <%= link_to lifestyle.name, lifestyle_path(lifestyle), class: "btn btn-primary" %>
+        <span class="price_tag"><%= "$#{lifestyle.price}" %></span>
+
+      <div class="delete btn">
+        <% if policy(lifestyle).destroy? %>
+          <%= link_to "Delete", lifestyle_path(lifestyle),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </div>
+    </div>
+      <br>
     <% end %>
-  <% end %>
-  <br>
-<% end %>
-  <br>
-<% if policy(Lifestyle).create? %>
-  <%= link_to "Add a new lifestyle", new_lifestyle_path %>
-<% end %>
+    <br>
+  </div>
+
+  <div
+  id="map"
+  class="sticky-top !important"
+  style="width: 100%;
+  height: 100vh;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
+</div>
+
+
+
+

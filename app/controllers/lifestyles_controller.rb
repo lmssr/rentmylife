@@ -26,22 +26,26 @@ class LifestylesController < ApplicationController
 
   def index
     @lifestyles = policy_scope(Lifestyle)
+    @markers = @lifestyles.geocoded.map do |lifestyle|
+      {
+        lat: lifestyle.latitude,
+        lng: lifestyle.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { lifestyle: lifestyle })
+      }
+    end
   end
 
   def destroy
-
     @lifestyle = Lifestyle.find(params[:id])
     authorize @lifestyle
 
     @lifestyle.destroy
-
-
     redirect_to lifestyles_path
   end
 
   private
 
   def lifestyle_params
-    params.require(:lifestyle).permit(:name, :description, :price)
+    params.require(:lifestyle).permit(:name, :description, :price, :address)
   end
 end
