@@ -1,42 +1,52 @@
 <div class="flex-profile">
- <div class="useravatar"><%= cl_image_tag(@user.photo)%></div>
- <div>  <h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2><p><%=@user.email%> - joined in 2019 </p></div>
-</div>
+  <div class="useravatar"><%= cl_image_tag(current_user.photo)%></div>
+    <div>
+      <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h2>
+      <p><%=current_user.email%> - joined in 2019 </p>
+    </div>
+  </div>
 
-<div>
-   <ul class="list-inline tabs-underlined">
-   <% if @user.lifestyles.length >= 1 %>
-   <li>
-     <a href="#" class="tab-underlined active">Your Lifestyle</a>
-      Name: <%= @user.lifestyles.first.name  %>
-      Details : <%=@user.lifestyles.first.description %>
-   </li>
-   <% end %>
- <%if @user.bookings %>
-       <li>
-         <a href="#" class="tab-underlined">Your Bookings</a>
-       <ul>
-         <% @user.bookings.each do |booking| %>
-         <li> You booked : <%= booking.lifestyle.name%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, your request is : <%= booking.status %>  </li>
-         <% end %>
-       </ul>
-       </li>
-   <% end %>
-   <%unless @bookings == []%>
-     <li>
-     <a href="#" class="tab-underlined active">Your Clients</a>
-       <ul>
-         <% @bookings.each do |booking| %>
-         <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>  </li>
-         <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> or  <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
-         <% end %>
-       </ul>
-   </li>
-    <% end %>
-   <li>
-     <a href="#" class="tab-underlined">Payment Methods</a>
-   </li>
- </ul>
+
+
+
+  <div>
+    <ul class="list-inline tabs-underlined">
+      <% if current_user.lifestyles.length >= 1 %>
+        <li>
+          <a href="#" class="tab-underlined">Your Lifestyle</a>
+          <p>Name: <%= current_user.lifestyles.first.name  %></p>
+          <p>Details : <%=current_user.lifestyles.first.description %></p>
+        </li>
+      <% end %>
+
+
+      <li>
+        <a href="#" class="tab-underlined">Your Pending Clients</a>
+        <ul>
+          <% @bookings.each do |booking| %>
+            <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>
+            </li>
+            <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> or  <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
+            <p>Status: <%= booking.status %></p>
+          <% end %>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="tab-underlined">Your Bookings you made</a>
+        <ul>
+          <% @bookings_i_made.each do |booking| %>
+            <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="tab-underlined">Payment Methods</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 
