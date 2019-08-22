@@ -10,3 +10,7 @@
 #map {
   position: sticky !important;
 }
+
+.mapboxgl-popup-anchor-bottom:hover {
+  color: red;
+}
