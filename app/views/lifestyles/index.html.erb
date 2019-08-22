@@ -3,19 +3,13 @@
 <div class="box">
   <div class="cards">
     <% @lifestyles.each do |lifestyle| %>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path lifestyle.photo, height: 300, width: 400, crop: :fill %>')">
-        <%= link_to lifestyle.name, lifestyle_path(lifestyle), class: "btn btn-primary" %>
-        <span class="price_tag"><%= "$#{lifestyle.price}/day"%></span>
-
-      <div class="delete btn">
-        <% if policy(lifestyle).destroy? %>
-          <%= link_to "Delete", lifestyle_path(lifestyle),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </div>
-    </div>
+      <%= link_to lifestyle_path(lifestyle) do %>
+        <div class="card-category" data-id="<%= lifestyle.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path lifestyle.photo, height: 300, width: 400, crop: :fill %>')">
+          <p><%= lifestyle.name %></p>
+          <br>
+          <span class="price_tag"><%= "$#{lifestyle.price}/day"%></span>
+        </div>
+      <% end %>
       <br>
     <% end %>
     <br>
