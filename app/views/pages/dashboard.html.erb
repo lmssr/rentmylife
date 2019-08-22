@@ -10,11 +10,11 @@
     Email : <%=@user.email%>
     <%= link_to "Edit Your profile" , "#" %>
   </li>
-   <% if @user.lifestyle_id %>
+   <% if @user.lifestyles.length >= 1 %>
   <li>
     <a href="#" class="tab-underlined active">Your Lifestyle</a>
-     Name: <%= @user.lifestyle.name  %>
-     Details : <%=@user.lifestyle.description %>
+     Name: <%= @user.lifestyles.first.name  %>
+     Details : <%=@user.lifestyles.first.description %>
   </li>
   <% end %>
  <%if @user.bookings %>
