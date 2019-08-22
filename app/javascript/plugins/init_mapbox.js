@@ -14,10 +14,14 @@ const buildMap = () => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-    new mapboxgl.Marker()
+    const markerObj = new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // add this
       .addTo(map);
+
+    markerObj._element.addEventListener("mouseenter", () => {
+      markerObj._element.click();
+    })
   });
 };
 
