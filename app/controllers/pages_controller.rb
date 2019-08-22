@@ -6,6 +6,10 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @bookings = current_user.lifestyle.bookings
+    if current_user.lifestyle != nil
+      @bookings = current_user.lifestyle.bookings
+    else
+      @bookings = []
+    end
   end
 end

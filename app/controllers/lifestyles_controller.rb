@@ -49,6 +49,6 @@ class LifestylesController < ApplicationController
   private
 
   def lifestyle_params
-    params.require(:lifestyle).permit(:name, :description, :price, :address)
+    params.require(:lifestyle).permit(:name, :description, :price, :address, :photo, :photo_cache)
   end
 end
