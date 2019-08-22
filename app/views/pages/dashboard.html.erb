@@ -1,20 +1,20 @@
-<div class=“flex-profile”>
- <div><%= cl_image_tag(@user.photo)%></div>
+<div class="flex-profile">
+ <div class="useravatar"><%= cl_image_tag(@user.photo)%></div>
  <div>  <h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2><p><%=@user.email%> - joined in 2019 </p></div>
 </div>
 
 <div>
-   <ul class=“list-inline tabs-underlined”>
+   <ul class="list-inline tabs-underlined">
    <% if @user.lifestyles.length >= 1 %>
    <li>
-     <a href=“#” class=“tab-underlined active”>Your Lifestyle</a>
+     <a href="#" class="tab-underlined active">Your Lifestyle</a>
       Name: <%= @user.lifestyles.first.name  %>
       Details : <%=@user.lifestyles.first.description %>
    </li>
    <% end %>
  <%if @user.bookings %>
        <li>
-         <a href=“#” class=“tab-underlined”>Your Bookings</a>
+         <a href="#" class="tab-underlined">Your Bookings</a>
        <ul>
          <% @user.bookings.each do |booking| %>
          <li> You booked : <%= booking.lifestyle.name%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, your request is : <%= booking.status %>  </li>
@@ -24,17 +24,17 @@
    <% end %>
    <%unless @bookings == []%>
      <li>
-     <a href=“#” class=“tab-underlined active”>Your Clients</a>
+     <a href="#" class="tab-underlined active">Your Clients</a>
        <ul>
          <% @bookings.each do |booking| %>
          <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>  </li>
-         <%= link_to “accept”,booking_path(booking, {booking: {status: “accepted”}}), method: :patch %> or  <%= link_to “refuse”,booking_path(booking, {booking: {status: “refused”}}), method: :patch %>
+         <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> or  <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
          <% end %>
        </ul>
    </li>
     <% end %>
    <li>
-     <a href=“#” class=“tab-underlined”>Payment Methods</a>
+     <a href="#" class="tab-underlined">Payment Methods</a>
    </li>
  </ul>
 </div>
