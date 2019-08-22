@@ -18,7 +18,7 @@ nicolas = User.create(email: "ni.fraisse@gmail.com", password:"123456", photo:"h
 # Lifestyle.create!(name: "Dwayne Johnson", description: "Who need a description ?", price: 1000, address: '100 baker street', user: nicolas,photo:)
 # Lifestyle.create!(name: "Dog", description: "Be a dog", price: 25, user: nicolas,photo:)
 url = "https://ichef.bbci.co.uk/news/624/cpsprodpb/3DA1/production/_96777751_c0220207-red-eyed_treefrog-spl.jpg"
-lifestyle = Lifestyle.new(name: "Frog", description: "Be a frog", price: 2895, user: nicolas)
+lifestyle = Lifestyle.new(name: "Frog", description: "Be a frog", price: 2895, user: nicolas, address: "Montreal,QC")
 lifestyle.remote_photo_url = url
 lifestyle.save
 puts "dnoe"
