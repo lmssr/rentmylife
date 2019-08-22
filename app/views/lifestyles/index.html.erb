@@ -1,9 +1,10 @@
+<br>
+<h1 class="lifestyle_title">Choose your Lifestyle</h1>
 
-<h1 class="lifestyle_title">Pick a Lifestyle</h1>
 
 
 <div style="display:flex; align-items: center;">
-  <div><%= form_tag lifestyles_path, method: :get do %>
+  <div style="width: 20%; margin: 50px;""><%= form_tag lifestyles_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -15,7 +16,6 @@
 <% end %>
 
 </div>
-
 
 
 <div class="box">
