@@ -1,15 +1,15 @@
-
 <div class=“flex-profile”>
- <div><%= cl_image_tag(@user.photo, width: 300, height: 300, crop: :fill, :class => “useravatar”) %></div>
- <div>  <h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2><p><%=@user.email%> - joined in 2019 - <%= link_to “Edit profile” , “#” %></p></div>
+ <div><%= cl_image_tag(@user.photo)%></div>
+ <div>  <h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2><p><%=@user.email%> - joined in 2019 </p></div>
 </div>
+
 <div>
    <ul class=“list-inline tabs-underlined”>
-   <% if @user.lifestyle_id %>
+   <% if @user.lifestyles.length >= 1 %>
    <li>
      <a href=“#” class=“tab-underlined active”>Your Lifestyle</a>
-      Name: <%= @user.lifestyle.name  %>
-      Details : <%=@user.lifestyle.description %>
+      Name: <%= @user.lifestyles.first.name  %>
+      Details : <%=@user.lifestyles.first.description %>
    </li>
    <% end %>
  <%if @user.bookings %>
@@ -38,3 +38,7 @@
    </li>
  </ul>
 </div>
+
+
+
+
