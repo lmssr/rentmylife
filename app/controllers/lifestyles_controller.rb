@@ -30,7 +30,8 @@ class LifestylesController < ApplicationController
       {
         lat: lifestyle.latitude,
         lng: lifestyle.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { lifestyle: lifestyle })
+        infoWindow: render_to_string(partial: "info_window", locals: { lifestyle: lifestyle }),
+        id: lifestyle.id
       }
     end
   end

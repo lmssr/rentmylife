@@ -12,6 +12,8 @@ const buildMap = () => {
 };
 
 const addMarkersToMap = (map, markers) => {
+  const markerObjs = []
+
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     const markerObj = new mapboxgl.Marker()
@@ -22,7 +24,10 @@ const addMarkersToMap = (map, markers) => {
     markerObj._element.addEventListener("mouseenter", () => {
       markerObj._element.click();
     })
+    markerObj.id = marker.id
+    markerObjs.push(markerObj)
   });
+  return markerObjs
 };
 
 const fitMapToMarkers = (map, markers) => {
@@ -35,9 +40,29 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
+    const markerObjs = addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+
+    document.querySelectorAll(".card-category").forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        const lifestyleId = card.dataset.id
+
+        markerObjs.forEach((marker) => {
+          if (marker.id == lifestyleId) {
+            marker._element.querySelector("svg > g > g:nth-child(2)").setAttribute("fill", "red")
+          } else {
+            marker._element.querySelector("svg > g > g:nth-child(2)").setAttribute("fill", "#3FB1CE")
+          }
+        })
+      });
+
+      card.addEventListener("mouseleave", () => {
+        markerObjs.forEach((marker) => {
+          marker._element.querySelector("svg > g > g:nth-child(2)").setAttribute("fill", "#3FB1CE")
+        })
+      });
+    });
   }
 };
 
