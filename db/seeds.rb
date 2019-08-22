@@ -6,15 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
+
 Booking.destroy_all
 Lifestyle.destroy_all
 User.destroy_all
-=======
 
-# Lifestyle.destroy_all
-# User.destroy_all
->>>>>>> 4f84529773478b6e7028b8ca7e4699385aa92e19
+
 nicolas = User.create(email: "ni.fraisse@gmail.com", password:"123456")
 Lifestyle.create!(name: "Plumber", description: "Be Mario for a few days", price: 4, address: '799  George Street, Peterborough', user: nicolas)
 Lifestyle.create!(name: "Fred", description: "Play golf all day long", price: 10, address: '3 avenue saint laurent, Montreal', user: nicolas)
