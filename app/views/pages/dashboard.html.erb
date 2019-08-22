@@ -5,10 +5,42 @@
 <ul class="list-inline tabs-underlined">
   <li>
     <a href="#" class="tab-underlined active">User Info</a>
+    First_name: <%= @user.first_name %>
+    Last_name:<%= @user.last_name %>
+    Email : <%=@user.email%>
+    <%= link_to "Edit Your profile" , "#" %>
   </li>
+   <% if @user.lifestyle_id %>
+  <li>
+    <a href="#" class="tab-underlined active">Your Lifestyle</a>
+     Name: <%= @user.lifestyle.name  %>
+     Details : <%=@user.lifestyle.description %>
+  </li>
+  <% end %>
   <li>
     <a href="#" class="tab-underlined">Your Bookings</a>
+    <%if @user.bookings %>
+      <ul>
+
+        <% @user.bookings.each do |booking| %>
+        <li> You booked : <%= booking.lifestyle.name%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, your request is : <%= booking.status %>  </li>
+        <% end %>
+
+      </ul>
+    <% end %>
   </li>
+  <%if @bookings %>
+    <li>
+    <a href="#" class="tab-underlined active">Your Clients</a>
+
+      <ul>
+        <% @bookings.each do |booking| %>
+        <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>  </li>
+        <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> or  <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
+        <% end %>
+      </ul>
+  </li>
+   <% end %>
   <li>
     <a href="#" class="tab-underlined">Your Reviews</a>
   </li>
