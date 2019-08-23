@@ -20,6 +20,7 @@ class LifestylesController < ApplicationController
 
   def show
     @lifestyle = Lifestyle.find(params[:id])
+    @review = Review.new
     authorize @lifestyle
     if @lifestyle.reviews
       @reviews = @lifestyle.reviews

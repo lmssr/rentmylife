@@ -1,0 +1,4 @@
+<%= simple_form_for([ lifestyle, review ], remote: true) do |form| %>
+  <%= form.input :comment, as: :text %>
+  <%= form.button :submit,class: "btn btn-primary" %>
+<% end %>

@@ -14,15 +14,12 @@
   <%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
   <%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
 </div>
-<div class="review-table">
- <% if @reviews%>
- <h3>Reviews :</h3>
- <ul>
-<% @reviews.each do |review| %>
-  <li><%=review.comment %></li>
-  <% end %>
-</ul>
-<% end %>
+<h2>Reviews:</h2>
+      <ul id="reviews">
+        <% @lifestyle.reviews.each do |review| %>
+          <%= render "reviews/show", review: review %>
+        <% end %>
+      </ul>
+<div id= "reviews-form">
+<%= render 'reviews/form', lifestyle: @lifestyle, review: @review %>
 </div>
-<%= link_to "Leave Comment" , new_lifestyle_review_path(@lifestyle)%>
-
