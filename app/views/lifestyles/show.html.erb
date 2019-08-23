@@ -1,5 +1,5 @@
 
-<div class="card-trip">
+<div class="card-trip justify-content-center">
   <%= cl_image_tag @lifestyle.photo%>
   <div class="card-info-all">
   <p class="wishlist-icon"><i class="far fa-heart"></i></p>
@@ -8,9 +8,10 @@
            <h1><%= @lifestyle.name %></h1>
            <span class="description"><%= @lifestyle.description %></span>
          </div>
-           <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}/day" %></h2>
-           <img src= "<%= @lifestyle.user.photo %>" class="card-trip-user avatar-bordered" />
+            <h2 class="card-trip-pricing"><%= "Price: $#{@lifestyle.price}/day" %></h2>
+            <img src= "<%= @lifestyle.user.photo %>" class="card-trip-user avatar-bordered" />
        </div>
+       <h2>Life owner: <%= @lifestyle.user.first_name %> <%= @lifestyle.user.last_name %></h2>
      <%=link_to "Rent Now", new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
      <%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
   </div>
