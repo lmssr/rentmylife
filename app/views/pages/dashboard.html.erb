@@ -17,27 +17,62 @@
 
   <div>
     <ul class="list-inline tabs-underlined">
-      <li>
-        <a href="#" class="tab-underlined">Your Pending Clients</a>
-        <ul>
-          <% @bookings.each do |booking| %>
-            <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>
-            </li>
-            <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> or  <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
-            <p>Status: <%= booking.status %></p>
-          <% end %>
-        </ul>
-      </li>
+      <% if @pending_bookings != [] %>
 
-      <li>
-        <a href="#" class="tab-underlined">Your Bookings you made</a>
-        <ul>
-          <% @bookings_i_made.each do |booking| %>
-            <li>Booked by <%= link_to booking.user.first_name, dashboard_path(booking.user)%>, from : <%= booking.start_date %> to: <%=booking.end_date%>, request : <%= booking.status %>
-            </li>
-          <% end %>
-        </ul>
-      </li>
+        <li>
+          <a href="#" class="tab-underlined">Your Pending Clients</a>
+          <ul>
+
+            <% @pending_bookings.each do |booking| %>
+
+
+              <p><%= booking.status %></p>
+              <li>Book request by <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", dashboard_path(booking.user)%>
+                <br>
+                From <%= booking.start_date %> to <%=booking.end_date%>
+                <br>
+                Message: <%= booking.message %>
+                <br>
+                <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
+                <br>
+                Status: <%= booking.status %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+
+
+      <% if @accepted_bookings != [] %>
+        <li>
+          <a href="#" class="tab-underlined">Your Clients</a>
+          <ul>
+            <% @accepted_bookings.each do |booking| %>
+              <li>Book request by <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", dashboard_path(booking.user)%>
+                <br>
+                From <%= booking.start_date %> to <%=booking.end_date%>
+                <br>
+                Message: <%= booking.message %>
+                <br>
+                <%= link_to "accept",booking_path(booking, {booking: {status: "accepted"}}), method: :patch %> <%= link_to "refuse",booking_path(booking, {booking: {status: "refused"}}), method: :patch %>
+                <br>
+                Status: <%= booking.status %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+      <% if @bookings_i_made != [] %>
+        <li>
+          <a href="#" class="tab-underlined">Your Bookings</a>
+          <ul>
+            <% @bookings_i_made.each do |booking| %>
+              <li><%= link_to "#{booking.lifestyle.name}", lifestyle_path(booking.lifestyle)%> <br> from <%= booking.start_date %> to <%=booking.end_date%>, request : <%= booking.status %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
