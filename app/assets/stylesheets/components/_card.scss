@@ -54,6 +54,7 @@
   padding: 32px;
   margin-bottom:32px;
   border-radius: 8px;
+  width: 100%;
 
   .request {
     display: block;
@@ -61,4 +62,10 @@
   }
 }
 
+.transparent {
+
+  width: 400px;
+  background-color: rgba(255,255,255,0.5);
+
+}
 
