@@ -17,10 +17,19 @@
 
 }
 
-.lifestyle-pic{
+.lifestyle-pic {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  // display: inline-block;
 }
+
 .fa-heart {
+  display: flex;
   font-size: 50px;
-  color: red;
+  color: white;
+  position: absolute;
+  right: 1400px;
+  top: 425px;
+  width: 50px;
 }
