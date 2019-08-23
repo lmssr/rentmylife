@@ -14,25 +14,13 @@
   <%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
   <%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
 </div>
-<<<<<<< HEAD
 <br>
-=======
-<div class="review-table">
->>>>>>> bd55a168f98bb61692d5d0a44b830dd1d3dd5bf5
- <% if @reviews%>
- <h3 style="text-align: center">Reviews :</h3>
- <ul>
-<% @reviews.each do |review| %>
-  <li><%=review.comment %></li>
-  <% end %>
-</ul>
-<% end %>
-<<<<<<< HEAD
-<div class="row d-flex justify-content-center">
-  <p class="btn draw-border" style="text-align: center"><%= link_to "Leave comment" , new_lifestyle_review_path(@lifestyle)%></p>
+<h2 style="text-align: center;">Reviews:</h2>
+      <ul id="reviews">
+        <% @lifestyle.reviews.each do |review| %>
+          <div class="review" style="border: 20px;"><%= render "reviews/show", review: review %></div>
+        <% end %>
+      </ul>
+<div id= "reviews-form">
+<%= render 'reviews/form', lifestyle: @lifestyle, review: @review %>
 </div>
-=======
-</div>
-<%= link_to "Leave Comment" , new_lifestyle_review_path(@lifestyle)%>
-
->>>>>>> bd55a168f98bb61692d5d0a44b830dd1d3dd5bf5

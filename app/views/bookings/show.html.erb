@@ -7,8 +7,7 @@
         <h4> <%=  @booking.lifestyle.name%></h4>
         <h4> From <%= @booking.start_date %></h4>
         <h4> To <%= @booking.end_date %></h4>
-        <h4> for <%= @booking.lifestyle.price * (@booking.end_date - @booking.start_date).to_int %> $ </h4>
-        <h4><strong>Your booking request has been sent to @booking.lifestyle.name. Please wait for his/her confirmation!</strong></h4>
+        <h4><strong>Your booking request has been sent to @booking.lifestyle.user.first_name Please wait for his/her confirmation!</strong></h4>
       </div>
     </div>
   </div>
