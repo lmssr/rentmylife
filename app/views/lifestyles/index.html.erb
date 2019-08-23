@@ -13,7 +13,7 @@
     </div>
     <div><%= submit_tag "Search", class: "search-button btn btn-primary" %>
     </div>
-  <% end %>
+  <% end %>t
 </div>
 
 <% results = Lifestyle.search_by_name_and_description(params[:query]) %>
@@ -21,7 +21,7 @@
 
 <% if params[:query] == nil || params[:query] == "" %>
 
-  <p><%= "There are #{Lifestyle.count} lifestyles currently for rent." %></p>
+<p><%= "There are #{Lifestyle.count} lifestyles currently for rent." %></p>
 
   <div class="box">
     <div class="cards">
