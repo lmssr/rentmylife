@@ -20,7 +20,7 @@
       <% @lifestyles.each do |result| %>
         <%= link_to lifestyle_path(result) do %>
           <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
-            <p><%= result.name %></p>
+            <h1><%= result.name %></h1>
             <br>
             <span class="price_tag"><%= "$#{result.price}/day"%></span>
           </div>
