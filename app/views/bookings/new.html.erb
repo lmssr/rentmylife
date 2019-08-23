@@ -2,20 +2,44 @@
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3">
-      <h4>For how long would you like to be a <%= @lifestyle.name %>?</h4>
+      <h4 class="booking-title">For how long would you like to be a <%= @lifestyle.name %>?</h4>
       <%= simple_form_for [@booking] do |f| %>
-        <%= f.input :start_date, input_html: {value: Date.today.to_s, min: Date.today.to_s}, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
-        <%= f.input :end_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true , input_html: {"min" => Date.today.to_s} %>
+        <%= f.input :start_date, :label => 'Start Date:', input_html: {value: Date.today.to_s, min: Date.today.to_s}, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
+        <%= f.input :end_date, :label => 'End Date:', as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true , input_html: {"min" => Date.today.to_s} %>
         <h4>Send a message to <%= @lifestyle.user.first_name %>, you may or may not be accepted accordingly.</h4>
-        <%= f.input :message %>
+        <%= f.input :message, :label => 'Message:' %>
         <p>  <span>$</span> <span id ="richard"> <%= @lifestyle.price %></span> </p>
         <p id="total_price"> </p>
         <%= f.hidden_field :lifestyle_id, value: @lifestyle.id %>
         <%= f.submit "Send Booking Request", class: "btn btn-primary" %>
+        <%= link_to "Cancel", lifestyle_path(@lifestyle), class: "btn btn-warning" %>
       <% end %>
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <script>
   const getPrice = () => {
   const start = document.getElementById('booking_start_date').value;
