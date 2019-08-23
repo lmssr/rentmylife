@@ -1,25 +1,22 @@
 <div class="flex-profile">
-  <div class="useravatar"><%= cl_image_tag(current_user.photo)%></div>
-    <div>
-      <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h2>
-      <p><%=current_user.email%> - joined in 2019 </p>
-    </div>
+  <div class="useravatar"><%= cl_image_tag(current_user.photo)%>
   </div>
+  <div>
+    <h2 style="margin-bottom: 24px">Hello, <%= current_user.first_name %> <%= current_user.last_name %>
+    </h2>
+    <p style="text-align:left;"><%=current_user.email%> - joined in 2019</p>
+    <% if current_user.lifestyles.length >= 1 %>
+      <p style="text-align:left;">Your Lifestyle: <a href="#" class=""><%= current_user.lifestyles.first.name %></a>
+      </p>
+    <% end %>
+  </div>
+</div>
 
 
 
 
   <div>
     <ul class="list-inline tabs-underlined">
-      <% if current_user.lifestyles.length >= 1 %>
-        <li>
-          <a href="#" class="tab-underlined">Your Lifestyle</a>
-          <p>Name: <%= current_user.lifestyles.first.name  %></p>
-          <p>Details : <%=current_user.lifestyles.first.description %></p>
-        </li>
-      <% end %>
-
-
       <li>
         <a href="#" class="tab-underlined">Your Pending Clients</a>
         <ul>
@@ -40,10 +37,6 @@
             </li>
           <% end %>
         </ul>
-      </li>
-
-      <li>
-        <a href="#" class="tab-underlined">Payment Methods</a>
       </li>
     </ul>
   </div>
