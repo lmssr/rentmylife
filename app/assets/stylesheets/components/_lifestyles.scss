@@ -11,8 +11,10 @@
   font-size: 28px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  padding-top: 20px;
 }
 
 #price_tag {
@@ -28,6 +30,14 @@
 
 p {
   text-align: center;
+}
+
+a {
+  color: #7060C0;
+}
+
+a:hover {
+  text-decoration:none;
 }
 
 .card-category:hover {
