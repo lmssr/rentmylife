@@ -1,9 +1,8 @@
-
 <div class="container">
   <div class="row">
 
-    <div class="col-6 offset-3">
-      <h4 class="booking-title">For how long would you like to be a <%= @lifestyle.name %>?</h4>
+
+
 
     <div class="col-6 offset-3 bookcard">
       <h4>For how long would you like to be a <%= @lifestyle.name %>?</h4>
@@ -14,47 +13,31 @@
         <h4>Send a message to <%= @lifestyle.user.first_name %>, you may or may not be accepted accordingly.</h4>
 
         <%= f.input :message, :label => 'Message:' %>
-        <p>  <span>$</span> <span id ="richard"> <%= @lifestyle.price %></span> </p>
-        <p id="total_price"> </p>
+        <p>
+
+        <p style="font-size: 24px;"> Price: <span>$
+        </span>
+
+        <span id ="richard"> <%= @lifestyle.price %></span> </p>
+
+        <h3>Total Price: $<span id = "total_price"></span> ;-)</h1>
         <%= f.hidden_field :lifestyle_id, value: @lifestyle.id %>
         <%= f.submit "Send Booking Request", class: "btn btn-primary" %>
         <%= link_to "Cancel", lifestyle_path(@lifestyle), class: "btn btn-warning" %>
 
-        <%= f.input :message %>
 
-        <p style="font-size: 24px;"> Total price: <span>$</span><span id ="richard"> <%= @lifestyle.price %></span> </p>
-        <p id="total_price"></p>
+
+
+
 
         <%= f.hidden_field :lifestyle_id, value: @lifestyle.id %>
-        <%= f.submit "Send Booking Request", class: "btn btn-primary request" %>
+
 
       <% end %>
     </div>
   </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <script>
   const getPrice = () => {
   const start = document.getElementById('booking_start_date').value;
