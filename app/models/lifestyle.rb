@@ -1,8 +1,8 @@
 class Lifestyle < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   belongs_to :user
-  has_many :reviews
-  has_many :bookings
+  has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   # has_many :users, through: :bookings
 
   validates :name, presence: true
