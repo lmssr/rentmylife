@@ -6,4 +6,30 @@
   border-radius: 5px;
 }
 
+.new-lifestyle {
+  padding-top: 20px;
+}
 
+.card-trip {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 50px;
+
+}
+
+.lifestyle-pic {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  // display: inline-block;
+}
+
+.fa-heart {
+  display: flex;
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  right: 1400px;
+  top: 425px;
+  width: 50px;
+}

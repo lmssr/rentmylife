@@ -2,6 +2,7 @@
 <div class="card-trip">
   <%= cl_image_tag @lifestyle.photo%>
   <div class="card-info-all">
+  <p class="wishlist-icon"><i class="far fa-heart"></i></p>
     <div class="card-trip-infos">
          <div>
            <h1><%= @lifestyle.name %></h1>
@@ -15,12 +16,12 @@
   </div>
 </div>
 
- <% if @reviews%>
- <h3>Reviews :</h3>
- <ul>
-<% @reviews.each do |review| %>
-  <li><%=review.comment %></li>
-  <% end %>
-</ul>
-<% end %>
-<%= link_to "Leave comment" , new_lifestyle_review_path(@lifestyle)%>
+<h2>Reviews:</h2>
+      <ul id="reviews">
+        <% @lifestyle.reviews.each do |review| %>
+          <%= render "reviews/show", review: review %>
+        <% end %>
+      </ul>
+<div id= "reviews-form">
+<%= render 'reviews/form', lifestyle: @lifestyle, review: @review %>
+</div>
