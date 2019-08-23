@@ -2,9 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-left: 100px;
-  margin-right: 100px;
-  width: 80%;
+
 
 }
 
@@ -57,10 +55,10 @@
   margin-bottom:32px;
   border-radius: 8px;
 
+  .request {
+    display: block;
+    margin: 24px auto 0px ;
+  }
 }
 
-.request {
-  position:relative;
-
-}
 
