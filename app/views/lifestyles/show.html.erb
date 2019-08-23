@@ -1,7 +1,7 @@
 
 <div class="card-trip">
   <%= cl_image_tag @lifestyle.photo, height: 300, width: 400, crop: :fill, class: "lifestyle-pic" %>
-    <p class="wishlist-icon"><i class="far fa-heart"></i></p>
+  <p class="wishlist-icon"><i class="far fa-heart"></i></p>
     <div class="card-trip-infos">
       <div>
         <h1><%= @lifestyle.name %></h1>
@@ -14,6 +14,7 @@
   <%=link_to "Rent Now" , new_lifestyle_booking_path(@lifestyle), class:"btn btn-primary" %>
   <%= link_to "Back to Lifestyles", lifestyles_path, class: "btn btn-info" %>
 </div>
+
 <h2>Reviews:</h2>
       <ul id="reviews">
         <% @lifestyle.reviews.each do |review| %>
