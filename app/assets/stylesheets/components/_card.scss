@@ -4,6 +4,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-left: 100px;
   margin-right: 100px;
+  width: 80%;
+
 }
 
 .card-trip > img {
@@ -13,7 +15,7 @@
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 10px;
 }
@@ -26,13 +28,17 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding:12px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
+.card-info-all {
+  padding: 16px;
+}
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
@@ -40,7 +46,21 @@
   width: 70px;
 }
 
-.decrpt {
+.description {
   line-height: 2;
+}
+
+.bookcard {
+  margin-top: 48px;
+  background-color: rgba(255,255,255,0.5);
+  padding: 32px;
+  margin-bottom:32px;
+  border-radius: 8px;
+
+}
+
+.request {
+  position:relative;
+
 }
 
