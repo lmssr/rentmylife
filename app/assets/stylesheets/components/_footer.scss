@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
+  height: 170px;
   padding: 8px 16px 8px 16px;
   color: rgba(0,0,0,0.3);
   flex-wrap: wrap;
@@ -30,8 +30,9 @@
   opacity: 1;
 }
 
-.footer .fa-heart {
-  color: #D23333;
+.footer .fa-fist-raised {
+  color: #ffcc00;
+  font-size: 30px;
 }
 
 .footer-copyright {
