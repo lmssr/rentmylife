@@ -1,17 +1,20 @@
 .footer {
   background: #745DC6;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
+  align-items: center;
+  height: 150px;
+  padding: 8px 16px 8px 16px;
   color: rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
   color: white;
+  position: relative;
 }
 
 .footer-links a {
@@ -33,5 +36,6 @@
 
 .footer-copyright {
   color: #f2f2f2;
+  position: relative;
 }
 
