@@ -3,9 +3,16 @@
   height: 200px;
 }
 
+.flex-profile {
+  display: flex;
+  padding: 48px;
+  justify-content: center;
+}
+
 .tabs-underlined {
   display: flex;
-  align-items: center;
+  align-items: end;
+  padding: 16px 48px 16px 48px;
 }
 
 .tabs-underlined .tab-underlined {
@@ -23,8 +30,3 @@
   border-bottom: 3px solid #555555;
 }
 
-.flex-profile {
-  display: flex;
-  padding: 48px;
-  justify-content: center;
-}
