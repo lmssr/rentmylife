@@ -3,11 +3,12 @@
   background-position: center;
   height: 200px;
   width: 400px;
-  // display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
+  justif-content: center;
+  padding-top: 13%;
   color: white;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 15px;
@@ -16,7 +17,11 @@
   padding-top: 20px;
 }
 
-
+#price_tag {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 200px;
+}
 .lifestyle_title {
   font-family: "Lobster";
   font-size: 56px;
@@ -37,7 +42,6 @@ a:hover {
 
 .card-category:hover {
   background-color: rgba(34, 84, 112, 0.5);
-
   border: 2px solid white;
   cursor: pointer;
 }
@@ -58,16 +62,20 @@ a:hover {
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
   }
+
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .cards {
     grid-template-columns: 1fr 1fr;
+  }
+  #map {
+    display: none;
   }
 }
 
@@ -81,10 +89,9 @@ a:hover {
   text-align: center;
 }
 
-.map {
-  border: 5px solid black;
+#map {
   width: 896px;
-  height: 600px;
+  height: 60px;
 }
 .box {
   display: flex;

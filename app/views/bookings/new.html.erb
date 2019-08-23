@@ -4,7 +4,7 @@
     <div class="col-6 offset-3">
       <h4>For how long would you like to be a <%= @lifestyle.name %>?</h4>
       <%= simple_form_for [@booking] do |f| %>
-        <%= f.input :start_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
+        <%= f.input :start_date, min: Date.today, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
         <%= f.input :end_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true  %>
         <h4>Send a message to <%= @lifestyle.user.first_name %>, you may or may not be accepted accordingly.</h4>
         <%= f.input :message %>
