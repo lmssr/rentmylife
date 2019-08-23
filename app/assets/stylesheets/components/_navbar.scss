@@ -1,13 +1,13 @@
 .nav-link {
-  color: #f2f2f2;
   margin-left: 15px;
+  color: white !important;
 }
 
 .navbar-lewagon {
   justify-content: space-between;
   background: #745DC6;
   color: #f2f2f2;
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px 12px 16px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,10 +19,26 @@
   width: 48px;
 }
 
-.nav-item {
+.nav-item a {
   font-size: 20px;
 }
 
 .dropdown-menu {
   z-index: 1021;
+}
+
+.logo {
+  display: inline;
+  padding-right: 10px;
+  font-size: 55px;
+  color: #D3E8E3;
+}
+
+.logotext {
+  font-family: 'Lobster';
+  color: white;
+  letter-spacing: 2px;
+  display: inline;
+  padding-bottom: 20px;
+  font-size: 37px;
 }

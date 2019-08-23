@@ -1,8 +1,5 @@
 <br>
 <h1 class="lifestyle_title">Choose your Lifestyle</h1>
-
-
-
 <div style="display:flex; align-items: center;">
   <div style="width: 20%; margin: 50px;""><%= form_tag lifestyles_path, method: :get do %>
     <%= text_field_tag :query,
@@ -14,41 +11,57 @@
     <div><%= submit_tag "Search", class: "search-button btn btn-primary" %>
     </div>
   <% end %>
-
-<% results = Lifestyle.search_by_name_and_description(params[:query]) %>
-
-<% results.each do |result|
-end %>
 </div>
-<p><%= "There are #{results.size} results." %></p>
-
-
-<div class="box">
-  <div class="cards">
-    <% results.each do |result| %>
-      <%= link_to lifestyle_path(result) do %>
-        <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
-          <p><%= result.name %></p>
-          <br>
-          <span class="price_tag"><%= "$#{result.price}/day"%></span>
-        </div>
+<% results = Lifestyle.search_by_name_and_description(params[:query]) %>
+<% if params[:query] == nil || params[:query] == "" %>
+<p style="text-align: left; margin-left: 51px; font-size: 18px;"><%= "There are #{Lifestyle.count} lifestyles currently for rent." %></p>
+  <div class="box">
+    <div class="cards">
+      <% @lifestyles.each do |result| %>
+        <%= link_to lifestyle_path(result) do %>
+          <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+            <p><%= result.name %></p>
+            <p id="price_tag"><%= "$#{result.price}/day"%></p>
+          </div>
+        <% end %>
+        <br>
       <% end %>
       <br>
-    <% end %>
-    <br>
+    </div>
+    <div
+    id="map"
+    class="sticky-top !important"
+    style="width: 100%;
+    height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+    </div>
   </div>
-
-  <div
-  id="map"
-  class="sticky-top !important"
-  style="width: 100%;
-  height: 100vh;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  >
+<% else %>
+  <p style="text-align: left; margin-left: 51px; font-size: 18px;"><%= "#{results.size} search results." %></p>
+  <div class="box">
+    <div class="cards">
+      <% results.each do |result| %>
+        <%= link_to lifestyle_path(result) do %>
+          <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+            <p><%= result.name %></p>
+            <br>
+            <span class="price_tag"><%= "$#{result.price}/day"%></span>
+          </div>
+        <% end %>
+        <br>
+      <% end %>
+      <br>
+    </div>
+    <div
+    id="map"
+    class="sticky-top !important"
+    style="width: 100%;
+    height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+    </div>
   </div>
-</div>
-
-
-
-
+<% end %>

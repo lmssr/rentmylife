@@ -42,7 +42,7 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     const markerObjs = addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
 
     document.querySelectorAll(".card-category").forEach((card) => {
       card.addEventListener("mouseenter", () => {

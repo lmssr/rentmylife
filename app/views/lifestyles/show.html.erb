@@ -1,6 +1,7 @@
 
 <div class="card-trip">
-  <%= cl_image_tag @lifestyle.photo, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @lifestyle.photo, height: 300, width: 400, crop: :fill, class: "lifestyle-pic" %>
+    <p class="wishlist-icon"><i class="far fa-heart"></i></p>
     <div class="card-trip-infos">
       <div>
         <h1><%= @lifestyle.name %></h1>
