@@ -10,8 +10,7 @@
 <br>
 <% bookings_dates = bookings_dates.to_json %>
 <% bookings_dates = JSON.parse(bookings_dates)%>
-<!-- we will  -->
-<%= bookings_dates %>
+<!-- we will  have something like: [[["start_date", "2019-08-24"], ["end_date", "2019-08-29"]], [["start_date", "2019-08-31"], ["end_date", "2019-09-01"]]]-->
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3 bookcard">
