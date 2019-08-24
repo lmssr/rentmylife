@@ -1,3 +1,13 @@
 .new-review {
-  padding-top: 20px;
+  padding-top: 10px;
+}
+
+.review {
+  list-style-type: none;
+  background-color: rgba(255,255,255,0.4);
+  padding: 16px;
+  border-radius: 8px;
+  width: 80%;
+  display: block;
+  margin: 24px auto;
 }

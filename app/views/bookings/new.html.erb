@@ -12,33 +12,36 @@
 <% bookings_dates = JSON.parse(bookings_dates)%>
 <!-- we will  -->
 <%= bookings_dates %>
-
-
 <div class="container">
   <div class="row">
-    <div class="col-6 offset-3">
+    <div class="col-6 offset-3 bookcard">
       <h4>For how long would you like to be a <%= @lifestyle.name %>?</h4>
       <!-- value and min used to set date to today and make all previous dates unclickibale -->
       <%= simple_form_for [@booking] do |f| %>
-        <%= f.input :start_date, input_html: {value: Date.today.to_s, min: Date.today.to_s}, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
-        <%= f.input :end_date, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true , input_html: {"min" => Date.today.to_s} %>
+        <%= f.input :start_date, :label => 'Start Date:', input_html: {value: Date.today.to_s, min: Date.today.to_s}, as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true %>
+        <%= f.input :end_date, :label => 'End Date:', as: :date, start_year: Date.today.year, order: [:day, :month, :year], html5: true , input_html: {"min" => Date.today.to_s} %>
         <h4>Send a message to <%= @lifestyle.user.first_name %>, you may or may not be accepted accordingly.</h4>
-        <%= f.input :message %>
         <!-- this line to display the current lifestyle price per day -->
-        <p>  <span>$</span> <span id ="richard"> <%= @lifestyle.price %></span> </p>
+        <p style="font-size: 24px;"> Price: <span>$
+        </span>
+           <span id ="richard"> <%= @lifestyle.price %></span> </p>
         <!-- this line to display the total (period*price) price -->
-        <p id="total_price"> </p>
+         <h3>Total Price: $<span id = "total_price"></span> ;-)</h1>
         <!-- this line is just a hidden file to send lifestyle_id to the new page -->
-        <%= f.hidden_field :lifestyle_id, value: @lifestyle.id %>
+         <%= f.hidden_field :lifestyle_id, value: @lifestyle.id %>
+        <%= f.input :message, :label => 'Message:' %>
+        <p>
         <!-- this line to pass the bookings dates from above to be query selected by js -->
         <input type="hidden" id = "here" value="<%= bookings_dates%>">
         <!-- this is to display the availaibility of a lifestyle for a specific period -->
         <p>  <span id ="av"> Status:</span> </p>
         <%= f.submit "Send Booking Request", class: "btn btn-primary" %>
+        <%= link_to "Cancel", lifestyle_path(@lifestyle), class: "btn btn-warning" %>
       <% end %>
     </div>
   </div>
 </div>
+
 <script>
   const getPrice = () => {
   const start = document.getElementById('booking_start_date').value;
