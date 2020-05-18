@@ -63,62 +63,70 @@ url = "https://ichef.bbci.co.uk/news/624/cpsprodpb/3DA1/production/_96777751_c02
 # lifestyle.remote_photo_url = url
 # lifestyle.save
 # puts "done"
-lifestyle = Lifestyle.new(name: "Rockstar", description: "If you ever wanted to be surrounded with people who only want to be around you because you are famous, then COME BE A ROCKSTAR! Jam and Snort like a Rock God and experience nirvana!", price: 2895, user: Axl, address: "Montreal, QC")
+lifestyle = Lifestyle.new(name: "Rockstar", description: "If you ever wanted to be surrounded with people who only want to be around you because you are famous, then COME BE A ROCKSTAR! Jam and Snort like a Rock God and experience nirvana!", price: 350, user: Axl, address: "Montreal, QC")
 lifestyle.remote_photo_url = 'https://i.cbc.ca/1.3213651.1441242597!/cpImage/httpImage/juno-awards.jpg'
 lifestyle.save
 puts "done"
-lifestyle = Lifestyle.new(name: "Exciting Plumber Life", description: "You can have the time of your life living the world of Mario. Jump into pipes and dodge mushrooms. No plumbing responsibility whatsoever.", price: 2895, user: Mario, address: "Toronto, ON")
+lifestyle = Lifestyle.new(name: "Exciting Plumber Life", description: "You can have the time of your life living the world of Mario. Jump into pipes and dodge mushrooms. No plumbing responsibility whatsoever.", price: 39, user: Mario, address: "Toronto, ON")
 lifestyle.remote_photo_url = 'https://cdn.vox-cdn.com/thumbor/Yt1avchDkHqEqJuhYZ3YjKF3kFc=/0x0:1700x960/1200x675/filters:focal(714x344:986x616)/cdn.vox-cdn.com/uploads/chorus_image/image/57514059/mario.0.jpg'
 lifestyle.save
 puts "done"
 
 lifestyle = Lifestyle.new(name: "Pirate", description: "Arrrrr!!:
 Live the life of a drunken sailor and experience the open seas. No need to know how to steer a boat, you will have other disease-ridden buccaneers on-board.
-*Chance of constant seasickness and possibility of getting yellow fever & scurvy.", price: 2895, user: Jack, address: "London, ON")
+*Chance of constant seasickness and possibility of getting yellow fever & scurvy.", price: 129, user: Jack, address: "London, ON")
 lifestyle.remote_photo_url = 'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555388290/shape/mentalfloss/istock_000070121937_small.jpg'
 lifestyle.save
 puts "done"
-lifestyle = Lifestyle.new(name: "Taylor Swift", description: "Be a frog", price: 2895, user: Jack, address: "Laval, QC")
+lifestyle = Lifestyle.new(name: "Taylor Swift", description: "Be a frog", price: 1495, user: Rocco, address: "Laval, QC")
 lifestyle.remote_photo_url = 'https://pmcvariety.files.wordpress.com/2020/01/taylor-swift-variety-cover-5-16x9-1000.jpg?w=681&h=383&crop=1'
 lifestyle.save
 puts "done"
-lifestyle = Lifestyle.new(name: "Hitman", description: "Are you a loner? Do you like guns? Do you like dead bodies? The being a Hitman is the perfect fit for you! No prior experience necessary This exciting lifestyle includes: - the opportunity to use an arsenal of weapons, with vague and minimal instructions. - the chance to live in the shadows and strike when the timing is right. - get bragging rights to actually make a target 'swim with the fishes.' Optional: mentorship is available", price: 2895, user: Leon, address: "Quebec City, QC")
+lifestyle = Lifestyle.new(name: "Hitman", description: "Are you a loner? Do you like guns? Do you like dead bodies? The being a Hitman is the perfect fit for you! No prior experience necessary This exciting lifestyle includes: - the opportunity to use an arsenal of weapons, with vague and minimal instructions. - the chance to live in the shadows and strike when the timing is right. - get bragging rights to actually make a target 'swim with the fishes.' Optional: mentorship is available", price: 599, user: Leon, address: "Quebec City, QC")
 lifestyle.remote_photo_url = 'https://images.cgmagonline.com/wp-content/uploads/2018/11/hitman-2-xbox-one-review.jpg'
 lifestyle.save
 puts "done"
 
-lifestyle = Lifestyle.new(name: "Dwayne Johnson", description: "Be the most badass action hero of all time (muscles not included)", price: 995, user: Leon, address: "Syracuse, USA")
+lifestyle = Lifestyle.new(name: "Dwayne Johnson", description: "Be the most badass action hero of all time (muscles not included)", price: 2895, user: Mario, address: "Syracuse, USA")
 lifestyle.remote_photo_url = 'https://i0.wp.com/sportytell.com/wp-content/uploads/2020/02/Dwayne-Johnson-Biography-Facts-Childhood-Net-Worth-Life-1.jpg?fit=1200%2C676&ssl=1'
 lifestyle.save
 puts "done"
 
-lifestyle = Lifestyle.new(name: "Bob Sponge", description: "Fast food worker", price: 2895, user: Leon, address: "Mirabel, QC")
+lifestyle = Lifestyle.new(name: "Bob Sponge", description: "Fast food worker", price: 9, user: Lea, address: "Mirabel, QC")
 lifestyle.remote_photo_url = 'https://images.ladbible.com/thumbnail?type=jpeg&url=http://beta.ems.ladbiblegroup.com/s3/content/19642d195c3b469be796ee9419441c6a.png&quality=70&width=720'
 lifestyle.save
 puts "done"
 
-lifestyle = Lifestyle.new(name: "Frog", description: "Be a frog", price: 14, user: Leon, address: "Mississauga, ON")
+lifestyle = Lifestyle.new(name: "Frog", description: "Be a frog", price: 15, user: Axl, address: "Mississauga, ON")
 lifestyle.remote_photo_url = 'https://ichef.bbci.co.uk/news/624/cpsprodpb/3DA1/production/_96777751_c0220207-red-eyed_treefrog-spl.jpg'
 lifestyle.save
 puts "done"
 
-lifestyle = Lifestyle.new(name: "Jackie Chan", description: "I'm elastic kind and rich and have billion girl-friends", price: 2895, user: Leon, address: "Sherbrooke, QC")
+lifestyle = Lifestyle.new(name: "Jackie Chan", description: "I'm elastic kind and rich and have billion girl-friends", price: 450, user: Kanye, address: "Sherbrooke, QC")
 lifestyle.remote_photo_url = 'https://i0.wp.com/blog.tubi.tv/wp-content/uploads/2017/04/jackie_chan-.jpeg?fit=1280%2C720&ssl=1'
 lifestyle.save
 puts "done"
 
+lifestyle = Lifestyle.new(name: "Maria Sharapova", description: "Let's play tennis at a competitive level!", price: 690, user: Rocco, address: "Cambridge, USA")
+lifestyle.remote_photo_url = 'https://photoresources.wtatennis.com/photo-resources/2019/12/20/620e03f5-f830-4800-9b92-3d734fd99fa3/Maria-Sharapova-2019-Australian-Open-Getty.jpg?width=1440&height=797'
+lifestyle.save
+puts "done"
 
+lifestyle = Lifestyle.new(name: "Nelson Mandela", description: "I am hero", price: 995, user: Harry, address: "Stamford, USA")
+lifestyle.remote_photo_url = 'https://i.ytimg.com/vi/M9pnImBZ_zQ/maxresdefault.jpg'
+lifestyle.save
+puts "done"
 
 nicolas = User.create(email: "ni.fraisse@gmail.com", password:"123123", photo:"https://ichef.bbci.co.uk/news/320/cpsprodpb/1404C/production/_108369918_393c6a43-2a4f-4ef8-b113-983b552b98e2.jpg")
 nicolas.save
 fred = User.create(email: "fred@gmail.com", password:"123123", photo:"https://ichef.bbci.co.uk/news/320/cpsprodpb/1404C/production/_108369918_393c6a43-2a4f-4ef8-b113-983b552b98e2.jpg")
 fred.save
 
-lifestyle = Lifestyle.new(name: "Fred", description: "Play golf all day long", price: 10, address: 'Boston, USA', user: Nicolas)
+lifestyle = Lifestyle.new(name: "Fred", description: "Play golf all day long", price: 150, address: 'Boston, USA', user: Nicolas)
 lifestyle.remote_photo_url = 'https://static.cnews.fr/sites/default/files/fredcourant_0.jpg'
 lifestyle.save
 
-lifestyle = Lifestyle.new(name: "Bruce Lee", description: "I'm the strongest man", price: 2895, user: Leon, address: "Sherbrooke, QC")
+lifestyle = Lifestyle.new(name: "Bruce Lee", description: "I'm the strongest man", price: 550, user: Bruce, address: "Sherbrooke, QC")
 lifestyle.remote_photo_url = 'https://cdn.i-scmp.com/sites/default/files/d8/images/methode/2019/11/17/34f27e64-0695-11ea-a68f-66ebddf9f136_image_hires_071653.jpg'
 lifestyle.save
 puts "done"
@@ -126,7 +134,7 @@ puts "done"
 
 
 
-lifestyle = Lifestyle.new(name: "Dog", description: "Be a dog", price: 8, user: fred, address: "New York, USA")
+lifestyle = Lifestyle.new(name: "Dog", description: "Be a dog", price: 25, user: fred, address: "New York, USA")
 lifestyle.remote_photo_url = 'https://post.healthline.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg'
 lifestyle.save
 
