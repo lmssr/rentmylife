@@ -37,7 +37,12 @@
   height: 100%;
   backface-visibility: hidden;
   padding-bottom: 20px;
+}
 
+.flip-card-front img {
+  width:300px;
+  height:350px;
+  object-fit: cover;
 }
 
 .flip-card-front {

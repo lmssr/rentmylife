@@ -1,67 +1,57 @@
-<br>
-<h1 class="lifestyle_title">Choose your Lifestyle</h1>
-<div style="display:flex; align-items: center;">
-  <div style="width: 20%; margin: 50px;""><%= form_tag lifestyles_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a lifestyle"
-  %>
+<h1 class="lifestyle_title my-5">Choose your Lifestyle</h1>
+
+
+<div class="d-flex flex-column flex-md-row" style="overflow: auto;">
+  <div class="form-and-results">
+    <div class="the-form">
+    <%= form_tag lifestyles_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a lifestyle" %>
+      <%= submit_tag "Search", class: "search-button btn btn-primary" %>
+    <% end %>
     </div>
-    <div><%= submit_tag "Search", class: "search-button btn btn-primary" %>
-    </div>
-  <% end %>
+    <% results = Lifestyle.search_by_name_and_description(params[:query]) %>
+    <% if params[:query] == nil || params[:query] == "" %>
+      <p class="res-count">
+        <%= "There are #{Lifestyle.count} lifestyles currently for rent." %>
+      </p>
+      <div class="box">
+        <div class="cards">
+          <% @lifestyles.each do |result| %>
+            <%= link_to lifestyle_path(result) do %>
+              <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+                <div>
+                  <h2><%= result.name %></h2>
+                  <span id="price-tag"><%= "$#{result.price}/day"%></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <p class="res-count">
+        <%= "#{results.size} search results." %>
+      </p>
+      <div class="box">
+        <div class="cards">
+          <% results.each do |result| %>
+            <%= link_to lifestyle_path(result) do %>
+              <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+                <div>
+                  <h2><%= result.name %></h2>
+                  <span class="price-tag"><%= "$#{result.price}/day"%></span>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
 </div>
-<% results = Lifestyle.search_by_name_and_description(params[:query]) %>
-<% if params[:query] == nil || params[:query] == "" %>
-<p style="text-align: left; margin-left: 51px; font-size: 18px;"><%= "There are #{Lifestyle.count} lifestyles currently for rent." %></p>
-  <div class="box">
-    <div class="cards">
-      <% @lifestyles.each do |result| %>
-        <%= link_to lifestyle_path(result) do %>
-          <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
-            <p><%= result.name %></p>
-            <p id="price_tag"><%= "$#{result.price}/day"%></p>
-          </div>
-        <% end %>
-        <br>
-      <% end %>
-      <br>
-    </div>
-    <div
-    id="map"
-    class="sticky-top !important"
-    style="width: 100%;
-    height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    >
-    </div>
-  </div>
-<% else %>
-  <p style="text-align: left; margin-left: 51px; font-size: 18px;"><%= "#{results.size} search results." %></p>
-  <div class="box">
-    <div class="cards">
-      <% results.each do |result| %>
-        <%= link_to lifestyle_path(result) do %>
-          <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
-            <p><%= result.name %></p>
-            <br>
-            <span class="price_tag"><%= "$#{result.price}/day"%></span>
-          </div>
-        <% end %>
-        <br>
-      <% end %>
-      <br>
-    </div>
-    <div
-    id="map"
-    class="sticky-top !important"
-    style="width: 100%;
-    height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    >
-    </div>
-  </div>
-<% end %>
