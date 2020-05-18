@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   transition: 0.15s;
+  position: relative;
 }
 
 .card-category:hover {
@@ -23,10 +24,16 @@
 }
 
 .price-tag {
-  font-weight: 600;
-  font-size: 25px;
-  color: rgba(255, 240, 150, 0.9);
-  text-shadow: 0 0 10px rgba(255, 245, 200, 0.7);
+  // font-weight: 600;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 19px;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 245, 200, 0.5);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .lifestyle_title {

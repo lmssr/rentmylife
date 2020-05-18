@@ -18,10 +18,10 @@
         <div class="cards">
           <% @lifestyles.each do |result| %>
             <%= link_to lifestyle_path(result) do %>
-              <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
                 <div>
                   <h2><%= result.name %></h2>
-                  <span id="price-tag"><%= "$#{result.price}/day"%></p>
+                  <span class="price-tag"><%= "$#{result.price}/day"%></span>
                 </div>
               </div>
             <% end %>
@@ -36,7 +36,7 @@
         <div class="cards">
           <% results.each do |result| %>
             <%= link_to lifestyle_path(result) do %>
-              <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-category" data-id="<%= result.id%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0, 0.2)), url('<%= cl_image_path result.photo, height: 300, width: 400, crop: :fill %>')">
                 <div>
                   <h2><%= result.name %></h2>
                   <span class="price-tag"><%= "$#{result.price}/day"%></span>
